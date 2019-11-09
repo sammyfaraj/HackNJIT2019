@@ -18,6 +18,11 @@
  text-align: center;
 }
 
+.StepBox {
+  min-height: 100%;
+}
+
 .IngredientCard {
   color: black;
+  margin-right: 10px;
 }
