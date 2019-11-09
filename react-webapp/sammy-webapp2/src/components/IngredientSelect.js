@@ -1,42 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import WindowedSelect from "react-windowed-select";
+import getAll from '../middle/getAll'
 
-const options = [];
+export default function MultiSelect() {
+  const [options, setOptions] = useState([]);
+  const [selectedList, setSelectedList] = useState(0);
 
-for (let i = 0; i < 5000; i += 1) {
-  options.push({
-    label: `Option ${i}`,
-    value: i
-  });
-}
+  getAll(setOptions)
 
-
-export default class MultiSelect extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedList: []
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(selectedList) {
-    this.setState({ selectedList });
-    console.log(`Selected list:`, selectedList);
-  }
-  render() {
-    const { selectedList } = this.state;
-    return (
-      <WindowedSelect
-        options={options}
-        onChange={this.handleChange}
-        value={selectedList}
-        isMulti
-        closeMenuOnSelect={false}
-      />
+  return (
+    <WindowedSelect
+      options={options}
+      onChange={() => setSelectedList()}
+      value={selectedList}
+      isMulti
+      closeMenuOnSelect={false}
+    />
     );
-  }
 }
+
 
 

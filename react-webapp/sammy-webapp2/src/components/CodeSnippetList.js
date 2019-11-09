@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
 import "../styles/App.css";
 import Card from "react-bootstrap/Card"
-import Accordion from "react-bootstrap/Accordion"
-// import APIrequest from '../api/middle'
+import getAll from '../middle/getAll'
 import IngredientSelect from './IngredientSelect'
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 
 export default function CodeSnippetList(props) {
   let Snippets = 
@@ -47,7 +45,7 @@ export default function CodeSnippetList(props) {
       <Card>
           <h3>{snippet.Name}</h3>
           <p>{snippet.Description}</p>
-        <IngredientSelect></IngredientSelect>
+        <IngredientSelect ></IngredientSelect>
         <br></br>
       </Card>
       <br></br>
