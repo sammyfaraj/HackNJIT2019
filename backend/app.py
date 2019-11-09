@@ -27,4 +27,5 @@ def get_recipes():
         return {'error': 'error'}
 
 if __name__ == '__main__':
+    recipe = recipe_generator.predict("['rice']")
     app.run(host='0.0.0.0')
