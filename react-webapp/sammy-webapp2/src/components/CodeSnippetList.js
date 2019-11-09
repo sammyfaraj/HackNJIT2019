@@ -5,6 +5,10 @@ import getAll from '../middle/getAll'
 import IngredientSelect from './IngredientSelect'
 
 export default function CodeSnippetList(props) {
+  const [masterIngredients, setMaster] = useState([]);
+
+  getAll(setMaster)
+
   let Snippets = 
   [
     {
@@ -45,7 +49,7 @@ export default function CodeSnippetList(props) {
       <Card>
           <h3>{snippet.Name}</h3>
           <p>{snippet.Description}</p>
-        <IngredientSelect ></IngredientSelect>
+        <IngredientSelect options={masterIngredients}></IngredientSelect>
         <br></br>
       </Card>
       <br></br>
