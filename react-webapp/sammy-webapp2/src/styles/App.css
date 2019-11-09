@@ -1,0 +1,23 @@
+.App {
+  background-color: #282c34;
+  min-height:100vh;
+  display: flex;
+}
+
+.Docs{
+  align-content: left;
+  text-align: left;
+}
+
+.Dashboard {
+ color: black;
+ font-size: calc(5px + 2vmin);
+ margin-top: 80px;
+ min-width: 100%;
+ align-content: center;
+ text-align: center;
+}
+
+.IngredientCard {
+  color: black;
+}

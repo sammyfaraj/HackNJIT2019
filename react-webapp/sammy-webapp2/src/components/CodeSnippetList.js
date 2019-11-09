@@ -1,0 +1,59 @@
+import React from "react";
+import "../styles/App.css";
+import Card from "react-bootstrap/Card"
+import Accordion from "react-bootstrap/Accordion"
+// import APIrequest from '../api/middle'
+import IngredientSelect from './IngredientSelect'
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+
+export default function CodeSnippetList(props) {
+  let Snippets = 
+  [
+    {
+      Name:"Master",
+      Description:"Search all Ingredients!",
+      Route:"facialrecognition",
+      Code:"",
+    },
+    {
+      Name:"Protein",
+      Description:"Select your Proteins!",
+      Route:"facialrecognition",
+      Code:"",
+    },
+    {
+      Name:"Dairy",
+      Description:"Select your Dairy!",
+      Route:"videoupload",
+      Code:"",
+    },
+    {
+      Name:"Grains",
+      Description:"Select your Grains!",
+      Route:"snippet1",
+      Code:"",
+    },
+    {
+      Name:"Fruits",
+      Description:"Select your Fruits!",
+      Route:"snippet2",
+      Code:""
+    },
+  ];
+
+  return (
+    Snippets.map((snippet) =>
+    <div className="IngredientCard">
+      <Card>
+          <h3>{snippet.Name}</h3>
+          <p>{snippet.Description}</p>
+        <IngredientSelect></IngredientSelect>
+        <br></br>
+      </Card>
+      <br></br>
+    </div>
+    )
+  )
+}
+
+//onClick={() => APIrequest(props.setCheckpoints, props.setComputation, props.setLatency, snippet.Route)} as={Card.Header}
