@@ -1,7 +1,7 @@
 const request = require('request'); 
 
 export default function getAll(setter) {
-    request('40.76.48.13/ingredients', function ( error, response, body) {
+    request('http://40.76.48.13/ingredients', function ( error, response, body) {
         body = JSON.parse(body);
         let ingredients = body['ingredients'];
         const options = [];
