@@ -1,5 +1,5 @@
 .App {
-  background-color: #282c34;
+  background-color: #fdc672;
   min-height:100vh;
   display: flex;
 }
@@ -9,20 +9,31 @@
   text-align: left;
 }
 
+.accordian{
+  background-color: white;
+  align-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
 .Dashboard {
  color: black;
  font-size: calc(5px + 2vmin);
- margin-top: 80px;
+ margin-top: 110px;
  min-width: 100%;
- align-content: center;
- text-align: center;
+ align-content: left;
+ text-align: left;
+ border-radius: 15px;
 }
 
 .StepBox {
-  min-height: 100%;
+  margin-left: 10px;
+  border-radius: 15px;
 }
 
-.IngredientCard {
-  color: black;
-  margin-right: 10px;
+.RightBox{
+  border-radius: 15px;
+}
+
+.navbar{
+  color: '#f99701';
 }

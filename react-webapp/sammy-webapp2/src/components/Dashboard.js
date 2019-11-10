@@ -2,24 +2,35 @@ import React, { useState } from 'react';
 import "../styles/App.css";
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
+import ListGroup from 'react-bootstrap/ListGroup'
+import SubmitButton from './SubmitButton.js'
 
 export default function Dashboard(props) {
+    var newlist = []
+
+    props.selectedIngredients.forEach(function(element){
+        newlist.push(element.label)
+     });
+
     return (
-    <div className='StepBox'>
+    <div className='RightBox'>
         <Jumbotron fluid>
-            <Container fluid="true">
-                <h1>Recipe Name</h1>
-                <h1>1.</h1>
-                <h1>2.</h1>
-                <h1>3.</h1>
-                <h1>4.</h1>
+            <div className="StepBox">
+            <Container fluid="true" >
+                <h1>Your Recipe!</h1>
                 <br></br>
+                <h3>Ingredients: {newlist.toString()}</h3>
+                <br></br>
+                <h3>Steps:</h3>
+                <ListGroup variant="flush">
+                {props.recipe.map((step) =>
+                    <ListGroup.Item>{step}</ListGroup.Item>)}
+                </ListGroup>
+               
             </Container>
+            </div>
         </Jumbotron>
-        <Button variant="success" size="lg" block>
-            Different Recipe!
-        </Button>
+        <SubmitButton selectedIngredients={props.selectedIngredients} setRecipe={props.setRecipe}></SubmitButton>
     </div>
     )
   }

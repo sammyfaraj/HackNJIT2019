@@ -8,10 +8,15 @@ import Col from 'react-bootstrap/Col'
 import CodeSnippetList from './CodeSnippetList'
 import Dashboard from './Dashboard'
 import Documentation from '../docs/documentation'
-import SubmitButton from './SubmitButton.js'
 
 function App() {
   const [documentation, setDocumentation] = useState(false);
+  const [selectedIngredients, setSelected] = useState([]);
+  const [recipe,setRecipe] = useState(["1.","2.","3.","4.","5."]);
+
+  if (!selectedIngredients){
+    setSelected([])
+  }
   return (
     <div className="App">
       {!documentation &&
@@ -20,11 +25,10 @@ function App() {
         <Container fluid="true">
           <Row>
             <Col xs={3}>
-              <CodeSnippetList></CodeSnippetList>
-              <SubmitButton></SubmitButton>
+              <CodeSnippetList setSelected={setSelected}></CodeSnippetList>
             </Col>
             <Col xs ={9}>
-              <Dashboard></Dashboard>
+              <Dashboard selectedIngredients={selectedIngredients} setRecipe={setRecipe} recipe={recipe}></Dashboard>
             </Col>
           </Row>
         </Container>

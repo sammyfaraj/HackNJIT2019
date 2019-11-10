@@ -4,12 +4,13 @@ import Card from "react-bootstrap/Card"
 import getAll from '../middle/getAll'
 import IngredientSelect from './IngredientSelect'
 import Image from 'react-bootstrap/Image'
+import Accordion from 'react-bootstrap/Accordion'
 
 export default function CodeSnippetList(props) {
   const [masterIngredients, setMaster] = useState([]);
-
-  getAll(setMaster)
-
+  if (masterIngredients.length == 0){
+    getAll(setMaster)
+  }
   let Snippets = 
   [
     {
@@ -17,65 +18,64 @@ export default function CodeSnippetList(props) {
       Description:"Search all Ingredients!",
       Route:"facialrecognition",
       Code:"https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2013/06/balanced-diet-for-women-main-image-700-350.jpg",
+      Type:"ingredients"
     },
     {
       Name:"Protein",
       Description:"Select your Proteins!",
       Route:"facialrecognition",
       Code:"https://www.thespruceeats.com/thmb/hl4lkmdLO7tj1eDCsGbakfk97Co=/3088x2055/filters:fill(auto,1)/marinated-top-round-steak-3060302-hero-02-ed071d5d7e584bea82857112aa734a94.jpg",
+      Type:"proteins"
     },
     {
       Name:"Dairy",
       Description:"Select your Dairy!",
       Route:"videoupload",
       Code:"data:image/jpeg;base64,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",
+      Type:"dairy"
     },
     {
       Name:"Grains",
       Description:"Select your Grains!",
       Route:"snippet1",
       Code:"https://wholegrainscouncil.org/sites/default/files/styles/teaser/public/thumbnails/image/GrainStrip1400.jpg?itok=nPvRCOm9",
+      Type:"grains"
     },
     {
       Name:"Fruits",
       Description:"Select your Fruits!",
       Route:"snippet2",
-      Code:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg?crop=0.657xw:0.983xh;0.191xw,0&resize=640:*"
+      Code:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg?crop=0.657xw:0.983xh;0.191xw,0&resize=640:*",
+      Type:"fruits"
     },
     {
       Name:"Vegetables",
-      Description:"Select your Fruits!",
+      Description:"Select your Vegetables!",
       Route:"snippet2",
-      Code:"https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg"
+      Code:"https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg",
+      Type:"vegetables"
     },
-    {
-      Name:"Fats",
-      Description:"Select your Fruits!",
-      Route:"snippet2",
-      Code:"https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBVT5wB.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f"
-    },
-    {
-      Name:"Legumes",
-      Description:"Select your Fruits!",
-      Route:"snippet2",
-      Code:"https://d2ebzu6go672f3.cloudfront.net/media/content/images/p3_Legumes_W1812_gi659524906.jpg"
-    },
-
   ];
 
   return (
     Snippets.map((snippet) =>
-    <div >
-      <Card className="IngredientCard">
-        <Image thumbnail  src={snippet.Code}></Image>
-        <h3>{snippet.Name}</h3>
-        <IngredientSelect options={masterIngredients}></IngredientSelect>
-        <br></br>
-      </Card>
+      <Accordion>
+      <div className='accordian'>
+      <Accordion.Toggle as={Card.Header}eventKey="0">
+        {snippet.Name}
+      </Accordion.Toggle>
+      </div>
+      <Accordion.Collapse eventKey="0">
+        <Card className="IngredientCard" className="accordian">
+          <Image thumbnail  src={snippet.Code}></Image>
+          <h3>{snippet.Description}</h3>
+          <IngredientSelect type={snippet.Type} options={masterIngredients} setSelected={props.setSelected}></IngredientSelect>
+          <br></br>
+        </Card>
+      </Accordion.Collapse>
       <br></br>
-    </div>
+      </Accordion>
     )
   )
 }
 
-//onClick={() => APIrequest(props.setCheckpoints, props.setComputation, props.setLatency, snippet.Route)} as={Card.Header}
