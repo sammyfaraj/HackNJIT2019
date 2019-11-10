@@ -5,8 +5,10 @@ import numpy as np
 import json
 import csv
 import os
+# for clarafai
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
+import requests
 
 # Load system variables with dotenv
 from dotenv import load_dotenv
@@ -98,26 +100,61 @@ def hello():                      # call method hello
 @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def classify():    
 
+    badLabels = ['sandwich', 'vegetable', 'meat', 'sauce', 'citrus', 'sweet', 'cocktail', 'juice',
+        'pasture', 'aliment', 'condiment']
+
     capp = ClarifaiApp(api_key=os.environ['CLARIFAI_API_KEY'])
     model = capp.models.get('food-items-v1.0')
     
     base64passed = json.loads(request.data)['base64']
     image2 = capp.inputs.create_image_from_base64(base64_bytes=base64passed)
     
-    image = ClImage(url='https://samples.clarifai.com/food.jpg')
-    resp = model.predict([image])
+    #image = ClImage(url='https://samples.clarifai.com/food.jpg')
+    #resp = model.predict([image])
     resp2 = model.predict([image2])
 
-    print(resp2)
+    #print(resp2['outputs'][0]['data']['concepts'])
+
+    classifications = resp2['outputs'][0]['data']['concepts']
+
+    respList = []
+
+    for item in classifications:
+        if item['value'] > .50 and item['name'] not in badLabels:
+            respList.append(item['name'])
     
-    return json.dumps(resp2)
+    return json.dumps({'items':respList})
+
+
+'''
+ ---------------------   MS AZURE BELOW   ---------------------
+'''
+
+@app.route("/shoppingList", methods=['POST'])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
+def msAzureImageRecog():
+    print('Classifying shopping list with msAzure')
+    endpoint = 'https://hacknjitvision1.cognitiveservices.azure.com/vision/v2.0/recognizeText?mode=Handwritten'
+    URL = json.loads(request.data)['url']
+    URL = unicode(URL, "utf-8")
+    print('url:')
+    print(URL)
+    PARAMS = {}
+    HEADERS = {
+        'content-type': 'application/json',
+        'Ocp-Apim-Subscription-Key': 'efd3cdebf4da478e98e8c17b5364224c'
+    }
+    r = requests.post(url = URL, params = PARAMS, headers = HEADERS)
+    print(r.text)
+    return json.dumps({})
+
+'''
+ ---------------------   MS AZURE END   ---------------------
+'''
 
 if __name__ == '__main__':
     #recipe = recipe_generator.predict("['rice']")
     app.run(host='0.0.0.0', port=80)
-
-
-
 
 
 
