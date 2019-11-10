@@ -4,6 +4,9 @@ import numpy as np
 #from better_recipe_generator import Generator
 import json
 import csv
+import os
+from clarifai.rest import ClarifaiApp
+from clarifai.rest import Image as ClImage
 
 # Load system variables with dotenv
 from dotenv import load_dotenv
@@ -91,19 +94,49 @@ def hello():                      # call method hello
 
     return json.dumps(obj)
 
-@app.route("/classifyImage")
+@app.route("/classifyImage", methods=['POST'])
 @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
-def classify():
+def classify():    
 
+    capp = ClarifaiApp(api_key=os.environ['CLARIFAI_API_KEY'])
+    model = capp.models.get('food-items-v1.0')
+    
+    base64passed = json.loads(request.data)['base64']
+    image2 = capp.inputs.create_image_from_base64(base64_bytes=base64passed)
+    
+    image = ClImage(url='https://samples.clarifai.com/food.jpg')
+    resp = model.predict([image])
+    resp2 = model.predict([image2])
+
+    print(resp2)
+    
+    return json.dumps(resp2)
+
+if __name__ == '__main__':
+    #recipe = recipe_generator.predict("['rice']")
+    app.run(host='0.0.0.0', port=80)
+
+
+
+
+
+
+
+
+
+
+
+    '''
+    # MS AZURE IMAGE RECOG
     computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
     #remote_image_url = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg"
     remote_image_url = 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/12/7/2/FN_fridge-food-safety_s3x4.jpg.rend.hgtvcom.616.822.suffix/1371602904324.jpeg'
     print('endpoint : ' + endpoint)
 
-    '''
-    Describe an image - remote
-    This example describes the contents of an image with the confidence score.
-    '''
+    
+    #Describe an image - remote
+    #This example describes the contents of an image with the confidence score.
+    
     print("===== Describe an image - remote =====")
     # Call API
     description_results = computervision_client.describe_image(remote_image_url )
@@ -117,11 +150,5 @@ def classify():
             print("'{}' with confidence {:.2f}%".format(caption.text, caption.confidence * 100))
     print(description_results)
 
-
-
     obj = {'classification' : caption.text}
-    return json.dumps(obj)
-
-if __name__ == '__main__':
-    recipe = recipe_generator.predict("['rice']")
-    app.run(host='0.0.0.0')
+    '''
