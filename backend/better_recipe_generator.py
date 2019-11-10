@@ -1,7 +1,4 @@
 import tensorflow as tf
-
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 from sklearn.model_selection import train_test_split
 
 import configparser
@@ -146,11 +143,11 @@ class Generator():
             else:
                 predicted_id = tf.argmax(predictions[0]).numpy()
 
-            result += self.decoder.targ_lang.index_word[predicted_id] + ' '
-
             if self.decoder.targ_lang.index_word[predicted_id] == '<end>':
                 return result
-                
+            
+            result += self.decoder.targ_lang.index_word[predicted_id] + ' '
+
             dec_input = tf.expand_dims([predicted_id], 0)
 
         return result

@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS, cross_origin
 import numpy as np
-#from better_recipe_generator import Generator
+from better_recipe_generator import Generator
 import json
 import csv
 
@@ -32,7 +32,7 @@ with open('ingredients.csv') as csv_file:
 
 # Load model
 checkpoint_dir = './model_data/'
-#recipe_generator = Generator(checkpoint_dir)
+recipe_generator = Generator(checkpoint_dir)
 
 
 # Initialize the Flask application
@@ -42,7 +42,8 @@ app = Flask(__name__)
 def get_recipes():
     try:
         data = request.json
-        recipe = recipe_generator.predict(data['ingredients'])
+        print(str(data))
+        recipe = recipe_generator.predict(str(data['ingredients']))
         return {'recipe': recipe}
     except:
         return {'error': 'error'}
@@ -123,5 +124,5 @@ def classify():
     return json.dumps(obj)
 
 if __name__ == '__main__':
-    recipe = recipe_generator.predict("['rice']")
-    app.run(host='0.0.0.0')
+    recipe_generator.predict("['rice']")
+    app.run(host='0.0.0.0', port=80)
