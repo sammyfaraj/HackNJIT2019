@@ -30,12 +30,18 @@ We started by creating a custom Tensorflow model using the latest algorithms for
 
 ### Manually Select Your Available Ingredients
 <img src="https://user-images.githubusercontent.com/20134674/69200543-7abc6680-0b09-11ea-8b4b-7048bb139d12.JPEG" height="600"/>
+
 <img src="https://user-images.githubusercontent.com/20134674/69200541-7a23d000-0b09-11ea-94a1-a3e4e949a203.JPEG" height="600"/>
+
 ### Now Time To Cook!
 <img src="https://user-images.githubusercontent.com/20134674/69200544-7abc6680-0b09-11ea-9206-5eaccfadd148.JPEG" height="600"/>
+
 <img src="https://user-images.githubusercontent.com/20134674/69200545-7abc6680-0b09-11ea-9a79-ba28c0c3263d.JPEG" height="600"/>
+
 ### React Web App
-<img src="https://user-images.githubusercontent.com/20134674/69200682-e0105780-0b09-11ea-8842-093004634742.png" height="600"/>
-<img src="https://user-images.githubusercontent.com/20134674/69200681-e0105780-0b09-11ea-94ba-0a7b0cbf5f37.png" height="600"/>
-<img src="https://user-images.githubusercontent.com/20134674/69200680-e0105780-0b09-11ea-9413-bb68e44eed78.png" height="600"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200682-e0105780-0b09-11ea-8842-093004634742.png" />
+
+<img src="https://user-images.githubusercontent.com/20134674/69200681-e0105780-0b09-11ea-94ba-0a7b0cbf5f37.png" />
+
+<img src="https://user-images.githubusercontent.com/20134674/69200680-e0105780-0b09-11ea-9413-bb68e44eed78.png" />
 
