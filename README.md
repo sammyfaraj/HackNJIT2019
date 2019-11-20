@@ -3,7 +3,7 @@
 
 #### Wasting your food cause you don't know what/how to cook? Use our app! Our proprietary AI algorithm will take your unused ingredients and generate new recipes for you to whip-up!
 
-#### Try it out: http://40.76.48.13:443/(http://40.76.48.13:443/)
+#### Try it out: http://40.76.48.13:443
 
 ### Inspiration
 Inspired to help the world waste less food... in a delicious way. Food goes bad if it sits in refrigerators and pantries for too long if we don't know what to do with it. We wanted to provide a way to easily come up with creative ideas to use those lingering items in your fridge and turn them into delicious & fun dishes!
@@ -23,7 +23,7 @@ We started by creating a custom Tensorflow model using the latest algorithms for
 ## Screenshots
 
 ### React Native Mobile App Landing Page
-![instacook_new_landing_page](https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG)
+<img src="https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG" height="225" 
 
 ### Image Recognition - Take a picture of your fridge!
 ![instacook_image_recognition](https://user-images.githubusercontent.com/20134674/69200540-7a23d000-0b09-11ea-9e30-a1a26083c37d.JPEG)
