@@ -23,26 +23,19 @@ We started by creating a custom Tensorflow model using the latest algorithms for
 ## Screenshots
 
 ### React Native Mobile App Landing Page
-<img src="https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG" height="225"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG" height="600"/>
 
 ### Image Recognition - Take a picture of your fridge!
-![instacook_image_recognition](https://user-images.githubusercontent.com/20134674/69200540-7a23d000-0b09-11ea-9e30-a1a26083c37d.JPEG)
+<img src="https://user-images.githubusercontent.com/20134674/69200540-7a23d000-0b09-11ea-9e30-a1a26083c37d.JPEG" height="600"/>
 
 ### Manually Select Your Available Ingredients
-![instacook_new_select](https://user-images.githubusercontent.com/20134674/69200543-7abc6680-0b09-11ea-8b4b-7048bb139d12.JPEG)
-
-![instacook_old_select](https://user-images.githubusercontent.com/20134674/69200541-7a23d000-0b09-11ea-94a1-a3e4e949a203.JPEG)
-
+<img src="https://user-images.githubusercontent.com/20134674/69200543-7abc6680-0b09-11ea-8b4b-7048bb139d12.JPEG" height="600"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200541-7a23d000-0b09-11ea-94a1-a3e4e949a203.JPEG" height="600"/>
 ### Now Time To Cook!
-![instacook_new_recipe_page](https://user-images.githubusercontent.com/20134674/69200544-7abc6680-0b09-11ea-9206-5eaccfadd148.JPEG)
-
-![instacook_new_recipe_page_2](https://user-images.githubusercontent.com/20134674/69200545-7abc6680-0b09-11ea-9a79-ba28c0c3263d.JPEG)
-
+<img src="https://user-images.githubusercontent.com/20134674/69200544-7abc6680-0b09-11ea-9206-5eaccfadd148.JPEG" height="600"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200545-7abc6680-0b09-11ea-9a79-ba28c0c3263d.JPEG" height="600"/>
 ### React Web App
-![instacook_web_1](https://user-images.githubusercontent.com/20134674/69200682-e0105780-0b09-11ea-8842-093004634742.png)
-
-![instacook_web_2](https://user-images.githubusercontent.com/20134674/69200681-e0105780-0b09-11ea-94ba-0a7b0cbf5f37.png)
-
-![instacook_web_3](https://user-images.githubusercontent.com/20134674/69200680-e0105780-0b09-11ea-9413-bb68e44eed78.png)
-
+<img src="https://user-images.githubusercontent.com/20134674/69200682-e0105780-0b09-11ea-8842-093004634742.png" height="600"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200681-e0105780-0b09-11ea-94ba-0a7b0cbf5f37.png" height="600"/>
+<img src="https://user-images.githubusercontent.com/20134674/69200680-e0105780-0b09-11ea-9413-bb68e44eed78.png" height="600"/>
 
