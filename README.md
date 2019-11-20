@@ -23,7 +23,7 @@ We started by creating a custom Tensorflow model using the latest algorithms for
 ## Screenshots
 
 ### React Native Mobile App Landing Page
-<img src="https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG" height="225" 
+<img src="https://user-images.githubusercontent.com/20134674/69200546-7abc6680-0b09-11ea-9894-078a17218ac7.JPEG" height="225"/>
 
 ### Image Recognition - Take a picture of your fridge!
 ![instacook_image_recognition](https://user-images.githubusercontent.com/20134674/69200540-7a23d000-0b09-11ea-9e30-a1a26083c37d.JPEG)
