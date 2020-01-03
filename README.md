@@ -4,6 +4,7 @@
 #### Wasting your food cause you don't know what/how to cook? Use our app! Our proprietary AI algorithm will take your unused ingredients and generate new recipes for you to whip-up!
 
 #### Try it out: http://40.76.48.13:443
+#### Devpost: https://devpost.com/software/funcooker
 
 ### Inspiration
 Inspired to help the world waste less food... in a delicious way. Food goes bad if it sits in refrigerators and pantries for too long if we don't know what to do with it. We wanted to provide a way to easily come up with creative ideas to use those lingering items in your fridge and turn them into delicious & fun dishes!
